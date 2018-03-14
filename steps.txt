@@ -1,0 +1,18 @@
+Mock App Front-end
+==================
+
+## Generate code from scratch
+```
+ng new mock-app-front
+cd mock-app-front
+```
+
+## Build
+```
+cd mock-app-front
+ng serve --open
+```
+
+## Run
+```
+```
