@@ -1,3 +1,17 @@
-<p>
-  bootstrap-poc works!
-</p>
+<div class="card mx-auto mt-3" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">PoC Bootstrap</h5>
+    <p class="card-text">This is the proof that Bootstrap CSS is installed successfully.</p>
+    <div class="btn-group" dropdown>
+	  <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+		Press me to test ngx-boostrap <span class="caret"></span>
+	  </button>
+	  <ul *dropdownMenu class="dropdown-menu" role="menu">
+		<li *ngFor="let choice of items">
+		  <a class="dropdown-item" href="#">{{choice}}</a>
+		</li>
+	  </ul>
+	</div>
+  </div>
+</div>
+

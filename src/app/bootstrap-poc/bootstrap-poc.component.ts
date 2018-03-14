@@ -6,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bootstrap-poc.component.css']
 })
 export class BootstrapPocComponent implements OnInit {
-
+	
+  items: string[] = [
+    'It seems',
+    'to work',
+    'just fine!'
+  ];
+  
   constructor() { }
 
   ngOnInit() {
