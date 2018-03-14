@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { BootstrapPocComponent } from './bootstrap-poc/bootstrap-poc.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BootstrapPocComponent
   ],
   imports: [
     BrowserModule
