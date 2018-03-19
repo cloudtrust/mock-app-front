@@ -5,6 +5,8 @@ import { FaPocComponent } from './fa-poc/fa-poc.component';
 import { RxjsPocComponent } from './rxjs-poc/rxjs-poc.component';
 import { I18nPocComponent } from './i18n-poc/i18n-poc.component';
 
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -14,7 +16,8 @@ describe('AppComponent', () => {
 		FaPocComponent,
 		RxjsPocComponent,
 		I18nPocComponent
-      ]
+      ],
+	  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
