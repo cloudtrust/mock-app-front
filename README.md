@@ -89,6 +89,22 @@ ng serve -aot --i18nFile=src/locale/messages.fr.xlf --i18nFormat=xlf --locale=fr
 cd mock-app-front
 ng generate component name-of-your-component
 ```
+Then add the component in src\app\app.component.spec.ts :
+```
+...
+import { NameOfYourComponentComponent } from './name-of-your-component/name-of-your-component.component';
+...
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        AppComponent,
+        ...,
+        NameOfYourComponentComponent
+      ],
+    }).compileComponents();
+  }));
+...
+```
 
 ## Build
 ```
@@ -100,7 +116,14 @@ cd mock-app-front
 ng serve --open
 ```
 
+## Run Jasmine unit tests with Karma
+```
+cd mock-app-front
+ng test
+```
+
 ## Bibliography
 * [ngx-bootstrap](https://valor-software.com/ngx-bootstrap/#/)
 * [angular-font-awesome](https://github.com/baruchvlz/angular-font-awesome)
 * [How to Add Bootstrap to an Angular CLI project](https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/)
+* [Angular Internationalization (i18n)](https://angular.io/guide/i18n)
