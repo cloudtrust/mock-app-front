@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { BootstrapPocComponent } from './bootstrap-poc/bootstrap-poc.component';
 import { FaPocComponent } from './fa-poc/fa-poc.component';
 import { RxjsPocComponent } from './rxjs-poc/rxjs-poc.component';
+import { I18nPocComponent } from './i18n-poc/i18n-poc.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { RxjsPocComponent } from './rxjs-poc/rxjs-poc.component';
     AppComponent,
     BootstrapPocComponent,
     FaPocComponent,
-    RxjsPocComponent
+    RxjsPocComponent,
+    I18nPocComponent
   ],
   imports: [
     BrowserModule,

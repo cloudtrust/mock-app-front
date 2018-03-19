@@ -69,7 +69,22 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 export class AppModule { }
 ```
 
-### Add a component
+## Internationalization
+### Generate the translation file
+```
+cd mock-app-front
+ng xi18n --locale en --outputPath src/locale
+```
+It generates the file ./src/locale/messages.xlf.
+### Translate the file
+Copy messages.xlf to messages.fr.xlf. Open it, create a new <target/> node after each <source/> node containing the translated version.
+### Run the application in a given language
+```
+cd mock-app-front
+ng serve -aot --i18nFile=src/locale/messages.fr.xlf --i18nFormat=xlf --locale=fr --open
+```
+
+## Add a new component
 ```
 cd mock-app-front
 ng generate component name-of-your-component
