@@ -8,13 +8,15 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppComponent } from './app.component';
 import { BootstrapPocComponent } from './bootstrap-poc/bootstrap-poc.component';
 import { FaPocComponent } from './fa-poc/fa-poc.component';
+import { RxjsPocComponent } from './rxjs-poc/rxjs-poc.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     BootstrapPocComponent,
-    FaPocComponent
+    FaPocComponent,
+    RxjsPocComponent
   ],
   imports: [
     BrowserModule,
