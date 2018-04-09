@@ -15,7 +15,7 @@ ng new mock-app-front
 #### Install the needed NPM dependencies
 ```
 cd mock-app-front
-npm install jquery popper.js ajv bootstrap ngx-bootstrap --save
+npm install jquery popper.js ajv bootstrap ngx-bootstrap ng-event-source --save
 ```
 #### Import CSS
 In the file .\.angular-cli.json, add the following path to the array apps.styles :
