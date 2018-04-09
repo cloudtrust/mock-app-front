@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs/observable/of';
 
+import { ServerCommPocService } from '../server-comm-poc.service';
+
 @Component({
   selector: 'app-rxjs-poc',
   templateUrl: './rxjs-poc.component.html',
@@ -10,12 +12,13 @@ export class RxjsPocComponent implements OnInit {
 
   exampleString = 'Click on me!';
 
-  constructor() { }
+  constructor(private hospitalService : ServerCommPocService) {
+  }
 
   ngOnInit() {
   }
   
   changeValueAsync(): void {
-    of("RxJS works!").subscribe(newString => this.exampleString = newString);
+    this.hospitalService.getHospitals().subscribe(hospitals => this.exampleString = hospitals.length + " hospital(s)");
   }
 }
