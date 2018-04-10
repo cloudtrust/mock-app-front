@@ -15,7 +15,7 @@ export class SsePocComponent implements OnInit {
   }
 
   establishSSEConnection(): void {
-    let eventSource = new EventSourcePolyfill('http://localhost:8000/events/channel-1', {
+    let eventSource = new EventSourcePolyfill('http://localhost:3000/events/channel-1', {
 
     });
     eventSource.onmessage = (data => {
