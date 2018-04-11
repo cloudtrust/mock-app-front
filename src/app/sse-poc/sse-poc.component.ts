@@ -9,23 +9,32 @@ import { EventSourcePolyfill } from 'ng-event-source';
 })
 export class SsePocComponent implements OnInit {
 
+  sseEstablished: boolean = false;
+  buttonLabel: string = "Establish";
+  lastMessage: string = "";
+
   constructor() { }
 
   ngOnInit() {
   }
 
   establishSSEConnection(): void {
-    let eventSource = new EventSourcePolyfill('http://localhost:3000/events/channel-1', {
-
-    });
-    eventSource.onmessage = (data => {
-        console.info(data);
-    });
-    eventSource.onopen = (a) => {
-        console.info("SSE connection established!");
-    };
-    eventSource.onerror = (e) => {
-      console.error(e);
+    if (!this.sseEstablished) {
+      this.sseEstablished = true;
+      this.buttonLabel = "Establishing..."
+      let eventSource = new EventSourcePolyfill('http://localhost:3000/events/channel-1', {
+      });
+      eventSource.onmessage = (data => {
+          console.info(data);
+          this.lastMessage = data.data;
+      });
+      eventSource.onopen = (a) => {
+        this.buttonLabel = "Established";
+      };
+      eventSource.onerror = (e) => {
+        console.error(e);
+        this.sseEstablished = false;
+      }
     }
   }
 
