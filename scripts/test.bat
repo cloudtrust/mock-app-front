@@ -1,5 +1,5 @@
 @echo off
 cd /D %~dp0/..
-ng serve --open
+ng test
 cd /D %~dp0
 pause
