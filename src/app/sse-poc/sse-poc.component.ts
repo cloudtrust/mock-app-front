@@ -56,13 +56,10 @@ export class SsePocComponent implements OnInit {
 
   disconnect(): void {
     if (this.isConnectingOrConnected()) {
+      var message = this.isConnected() ? "SSE connection closed." : "SSE connection aborted.";
       this.eventSource.close();
       this.updateLabel();
-      if (this.isConnected()) {
-        console.info("SSE connection closed.");
-      } else {
-        console.info("SSE connection aborted.")
-      }
+      console.info(message)
     }
   }
 
