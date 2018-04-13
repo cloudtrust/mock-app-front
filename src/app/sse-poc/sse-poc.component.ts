@@ -35,6 +35,7 @@ export class SsePocComponent implements OnInit {
 
   connect(): void {
     if (this.isDisconnected()) {
+      console.info("SSE connection in progress...");
       this.eventSource = new EventSourcePolyfill('http://localhost:3000/events/channel-1', {
       });
       this.eventSource.onmessage = (data => {
@@ -57,6 +58,11 @@ export class SsePocComponent implements OnInit {
     if (this.isConnectingOrConnected()) {
       this.eventSource.close();
       this.updateLabel();
+      if (this.isConnected()) {
+        console.info("SSE connection closed.");
+      } else {
+        console.info("SSE connection aborted.")
+      }
     }
   }
 
