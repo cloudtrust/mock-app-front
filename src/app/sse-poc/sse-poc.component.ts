@@ -9,8 +9,10 @@ import { EventSourcePolyfill } from 'ng-event-source';
 })
 export class SsePocComponent implements OnInit {
 
-  sseEstablished: boolean = false;
-  buttonLabel: string = "Establish";
+  eventSource: EventSourcePolyfill;
+
+  connectButtonLabel: string = "Connect";
+  disconnectButtonLabel: string = "Disconnect";
   lastMessage: string = "";
 
   constructor() { }
@@ -18,24 +20,58 @@ export class SsePocComponent implements OnInit {
   ngOnInit() {
   }
 
-  establishSSEConnection(): void {
-    if (!this.sseEstablished) {
-      this.sseEstablished = true;
-      this.buttonLabel = "Establishing..."
-      let eventSource = new EventSourcePolyfill('http://localhost:3000/events/channel-1', {
+  isConnectingOrConnected(): boolean {
+    return this.eventSource &&
+      (this.eventSource.readyState == this.eventSource.CONNECTING || this.eventSource.readyState == this.eventSource.OPEN);
+  }
+
+  isConnected(): boolean {
+    return this.eventSource && this.eventSource.readyState == this.eventSource.OPEN;
+  }
+
+  isDisconnected(): boolean {
+    return !this.eventSource || this.eventSource.readyState == this.eventSource.CLOSED;
+  }
+
+  connect(): void {
+    if (this.isDisconnected()) {
+      this.eventSource = new EventSourcePolyfill('http://localhost:3000/events/channel-1', {
       });
-      eventSource.onmessage = (data => {
+      this.eventSource.onmessage = (data => {
           console.info(data);
           this.lastMessage = data.data;
       });
-      eventSource.onopen = (a) => {
-        this.buttonLabel = "Established";
+      this.eventSource.onopen = (a) => {
+        this.updateLabel();
+        console.info("SSE connection established!");
       };
-      eventSource.onerror = (e) => {
+      this.eventSource.onerror = (e) => {
         console.error(e);
-        this.sseEstablished = false;
+        this.updateLabel();
+      }
+      this.updateLabel();
+    }
+  }
+
+  disconnect(): void {
+    if (this.isConnectingOrConnected()) {
+      this.eventSource.close();
+      this.updateLabel();
+    }
+  }
+
+  updateLabel(): void {
+    if (this.eventSource) {
+      switch (this.eventSource.readyState) {
+        case this.eventSource.CONNECTING:
+          this.connectButtonLabel = "Connecting...";
+          return;
+        case this.eventSource.OPEN:
+          this.connectButtonLabel = "Connected";
+          return;
       }
     }
+    this.connectButtonLabel = "Connect";
   }
 
 }

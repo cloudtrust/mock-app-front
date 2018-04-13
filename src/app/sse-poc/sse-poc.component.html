@@ -1,12 +1,12 @@
 <div class="card mx-auto mt-3" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">PoC Server-sent events</h5>
-    <p class="card-text">Clicking on the button will establish a SSE connection with the back-end and display the messages we receive from it in the Javascript console.</p>
+    <p class="card-text">Clicking on the Connect button will establish a SSE connection with the back-end and display the messages we receive.</p>
     <div class="btn-group">
-      SSE connection:&nbsp;
-      <button (click)="establishSSEConnection()" [disabled]="sseEstablished">{{buttonLabel}}</button>
+      <button (click)="connect()" [disabled]="isConnectingOrConnected()">{{connectButtonLabel}}</button>
+      <button (click)="disconnect()" [disabled]="isDisconnected()">{{disconnectButtonLabel}}</button>
     </div>
-    <p *ngIf="sseEstablished && lastMessage != ''"><b>Last message:</b> {{lastMessage}}</p>
+    <p *ngIf="isConnected()"><b>Last message:</b> {{lastMessage}}</p>
   </div>
 </div>
 
