@@ -1,11 +1,15 @@
 Mock App Front-end
 ==================
 
-## Install Angular CLI
+## Install needed binaries
+### npm
+```
+npm install
+```
+### Angular CLI
 ```
 npm install -g @angular/cli
 ```
-
 ## Generate code from scratch
 ### Initialize Angular project
 ```
