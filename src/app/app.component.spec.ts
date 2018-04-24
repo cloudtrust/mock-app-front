@@ -5,25 +5,35 @@ import { FaPocComponent } from './fa-poc/fa-poc.component';
 import { RxjsPocComponent } from './rxjs-poc/rxjs-poc.component';
 import { I18nPocComponent } from './i18n-poc/i18n-poc.component';
 import { SsePocComponent } from './sse-poc/sse-poc.component';
+import { LoginPocComponent } from './login-poc/login-poc.component';
 import { ServerCommPocService } from './server-comm-poc.service';
 
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+
+import { OAuthService, UrlHelperService } from 'angular-oauth2-oidc';
 
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [
+        HttpClientTestingModule
+      ],
       declarations: [
         AppComponent,
         BootstrapPocComponent,
         FaPocComponent,
         RxjsPocComponent,
         I18nPocComponent,
-        SsePocComponent
+        SsePocComponent,
+        LoginPocComponent
       ],
-      providers: [ ServerCommPocService ],
+      providers: [ 
+        ServerCommPocService,
+        OAuthService,
+        UrlHelperService
+      ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
