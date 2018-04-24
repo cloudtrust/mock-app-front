@@ -3,8 +3,8 @@
     <h5 class="card-title">PoC Server-sent events</h5>
     <p class="card-text">Clicking on the Connect button will establish a SSE connection with the back-end and display the messages we receive.</p>
     <div class="btn-group">
-      <button (click)="connect()" [disabled]="isConnectingOrConnected()">{{connectButtonLabel}}</button>&nbsp;
-      <button (click)="disconnect()" [disabled]="isDisconnected()">{{disconnectButtonLabel}}</button>
+      <button class="btn btn-default" (click)="connect()" [disabled]="isConnectingOrConnected()">{{connectButtonLabel}}</button>&nbsp;
+      <button class="btn btn-default" (click)="disconnect()" [disabled]="isDisconnected()">{{disconnectButtonLabel}}</button>
     </div>
     <p *ngIf="isConnected()"><b>Last message:</b> {{lastMessage}}</p>
   </div>
