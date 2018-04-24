@@ -68,6 +68,27 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 })
 export class AppModule { }
 ```
+### Setup OIDC
+#### Install the needed NPM dependency
+```
+cd mock-app-front
+npm install angular-oauth2-oidc --save
+```
+#### Import module
+Open ./src/app/app.module.ts and add the following :
+```
+import { OAuthModule } from 'angular-oauth2-oidc';
+//...
+@NgModule({
+  //...
+  imports: [
+    //...,
+    OAuthModule.forRoot()
+  ],
+  //...
+})
+export class AppModule { }
+```
 
 ## Internationalization
 ### Generate the translation file

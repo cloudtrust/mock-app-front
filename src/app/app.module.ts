@@ -6,6 +6,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
+import { OAuthModule } from 'angular-oauth2-oidc';
+
 import { AppComponent } from './app.component';
 import { BootstrapPocComponent } from './bootstrap-poc/bootstrap-poc.component';
 import { FaPocComponent } from './fa-poc/fa-poc.component';
@@ -28,9 +30,14 @@ import { SsePocComponent } from './sse-poc/sse-poc.component';
     BrowserModule,
     BsDropdownModule.forRoot(),
     AngularFontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    OAuthModule.forRoot()
   ],
-  providers: [ServerCommPocService],
-  bootstrap: [AppComponent]
+  providers: [
+    ServerCommPocService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
