@@ -126,8 +126,12 @@ export class AppModule { }
 
 #### Keycloack configuration
 
-* Create a new real called "mock_realm".
-* Create a new client in this realm called "mock-client".
+* Create a new realm called "mock_realm".
+* In this realm, create a new user. Assign him a password.
+* In this realm, create a new client called "mock-app".
+* In this client...
+  * Set "Valid Redirect URIs" to [http://localhost:4200](http://localhost:4200)
+  * Enable "Implicit Flow"
 
 If needed, adapt src/app/auth.config.ts.
 
