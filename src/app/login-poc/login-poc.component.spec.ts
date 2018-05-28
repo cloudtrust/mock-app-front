@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { LoginPocComponent } from './login-poc.component';
+import { OAuthService, UrlHelperService } from 'angular-oauth2-oidc';
 
 describe('LoginPocComponent', () => {
   let component: LoginPocComponent;
@@ -8,7 +10,9 @@ describe('LoginPocComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginPocComponent ]
+      imports: [ HttpClientTestingModule ],
+      declarations: [ LoginPocComponent ],
+      providers: [ OAuthService, UrlHelperService ]
     })
     .compileComponents();
   }));
