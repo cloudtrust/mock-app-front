@@ -10,7 +10,7 @@ describe('FaPocComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ FaPocComponent ],
-	  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+	    schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
