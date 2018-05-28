@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PocComponent } from './poc/poc.component';
 
 const routes: Routes = [
-  { path: 'poc', component: PocComponent }
+  { path: '', redirectTo: '/poc', pathMatch: 'full' },
+  { path: 'poc', component: PocComponent },
 ];
 
 @NgModule({
