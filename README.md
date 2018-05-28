@@ -193,6 +193,8 @@ cd mock-app-front
 ng serve --open
 ```
 
+For OIDC to work at ELCA, don't forget to connect to IAP!
+
 ## Run Jasmine unit tests with Karma
 
 ```bash
