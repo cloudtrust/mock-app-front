@@ -17,6 +17,8 @@ import { ServerCommPocService } from './server-comm-poc.service';
 import { SsePocComponent } from './sse-poc/sse-poc.component';
 import { LoginPocComponent } from './login-poc/login-poc.component';
 import { MenuComponent } from './menu/menu.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { PocComponent } from './poc/poc.component';
 
 
 @NgModule({
@@ -28,14 +30,16 @@ import { MenuComponent } from './menu/menu.component';
     I18nPocComponent,
     SsePocComponent,
     LoginPocComponent,
-    MenuComponent
+    MenuComponent,
+    PocComponent
   ],
   imports: [
     BrowserModule,
     BsDropdownModule.forRoot(),
     AngularFontAwesomeModule,
     HttpClientModule,
-    OAuthModule.forRoot()
+    OAuthModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [
     ServerCommPocService
