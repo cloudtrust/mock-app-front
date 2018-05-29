@@ -19,6 +19,11 @@ import { LoginPocComponent } from './login-poc/login-poc.component';
 import { MenuComponent } from './menu/menu.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { PocComponent } from './poc/poc.component';
+import { HospitalsComponent } from './hospitals/hospitals.component';
+import { DepartmentsComponent } from './departments/departments.component';
+import { DoctorsComponent } from './doctors/doctors.component';
+import { PatientsComponent } from './patients/patients.component';
+import { FilesComponent } from './files/files.component';
 
 
 @NgModule({
@@ -31,7 +36,12 @@ import { PocComponent } from './poc/poc.component';
     SsePocComponent,
     LoginPocComponent,
     MenuComponent,
-    PocComponent
+    PocComponent,
+    HospitalsComponent,
+    DepartmentsComponent,
+    DoctorsComponent,
+    PatientsComponent,
+    FilesComponent
   ],
   imports: [
     BrowserModule,
