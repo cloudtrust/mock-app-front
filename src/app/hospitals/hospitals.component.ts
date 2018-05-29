@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs/observable/of';
-
-import { ServerCommPocService } from '../server-comm-poc.service';
 
 @Component({
   selector: 'app-hospitals',
@@ -10,16 +7,30 @@ import { ServerCommPocService } from '../server-comm-poc.service';
 })
 export class HospitalsComponent implements OnInit {
 
-  string = 'Loading...';
+  dtOptions: DataTables.Settings = {};
 
-  constructor(private hospitalService : ServerCommPocService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.loadHospitals();
+    this.dtOptions = {
+      ajax: {
+        "url": "http://localhost:8000/hospitals",
+        "dataSrc": ""
+      },
+      lengthChange: false,
+      searching: false,
+      columns: [{
+        title: 'ID',
+        data: 'id'
+      }, {
+        title: 'Name',
+        data: 'name'
+      }, {
+        title: 'City',
+        data: 'city'
+      }]
+    };
   }
-  
-  loadHospitals(): void {
-    this.hospitalService.getHospitals().subscribe(hospitals => this.string = JSON.stringify(hospitals));
-  }
+
 }

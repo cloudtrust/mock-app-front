@@ -1,19 +1,4 @@
-<p>{{string}}</p>
-<table datatable class="row-border hover">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>City</th>
-      </tr>
-    </thead>
-    <tbody>
-    <!--
-      <tr>
-        <td>1</td>
-        <td>Foo</td>
-        <td>Bar</td>
-      </tr>
-    -->
-    </tbody>
-  </table>
+<div class="container-fluid mt-2">
+    <h3>Hospitals</h3>
+    <table datatable [dtOptions]="dtOptions" class="row-border hover"></table>
+</div>
