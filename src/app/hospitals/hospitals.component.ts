@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { of } from 'rxjs/observable/of';
+
+import { ServerCommPocService } from '../server-comm-poc.service';
 
 @Component({
   selector: 'app-hospitals',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HospitalsComponent implements OnInit {
 
-  constructor() { }
+  string = 'Loading...';
 
-  ngOnInit() {
+  constructor(private hospitalService : ServerCommPocService) {
   }
 
+  ngOnInit() {
+    this.loadHospitals();
+  }
+  
+  loadHospitals(): void {
+    this.hospitalService.getHospitals().subscribe(hospitals => this.string = JSON.stringify(hospitals));
+  }
 }
