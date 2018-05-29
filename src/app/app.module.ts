@@ -4,6 +4,8 @@ import { HttpClientModule }    from '@angular/common/http';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
+import { DataTablesModule } from 'angular-datatables';
+
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { OAuthModule } from 'angular-oauth2-oidc';
@@ -49,7 +51,8 @@ import { FilesComponent } from './files/files.component';
     AngularFontAwesomeModule,
     HttpClientModule,
     OAuthModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    DataTablesModule
   ],
   providers: [
     ServerCommPocService

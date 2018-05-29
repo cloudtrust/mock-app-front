@@ -76,7 +76,7 @@ npm install font-awesome angular-font-awesome --save
 In the file .\.angular-cli.json, add the following path to the array apps.styles :
 
 ```text
-../node_modules/font-awesome/css/font-awesome.css
+"../node_modules/font-awesome/css/font-awesome.css"
 ```
 
 #### Import module
@@ -97,9 +97,56 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 export class AppModule { }
 ```
 
+### Setup DataTables
+
+### Install the needed NPM dependencies
+
+```bash
+cd mock-app-front
+npm install jquery --save
+npm install datatables.net --save
+npm install datatables.net-dt --save
+npm install angular-datatables --save
+npm install @types/jquery --save-dev
+npm install @types/datatables.net --save-dev
+```
+
+#### Import CSS and JS
+
+In the file .\.angular-cli.json, add the following path to the array apps.styles :
+
+```text
+"../node_modules/datatables.net-dt/css/jquery.dataTables.css"
+```
+
+and the following paths to the array apps.scripts
+
+```text
+"../node_modules/jquery/dist/jquery.js",
+"../node_modules/datatables.net/js/jquery.dataTables.js"
+```
+
+#### Import module
+
+Open ./src/app/app.module.ts and add the following :
+
+```angular
+import { DataTablesModule } from 'angular-datatables';
+//...
+@NgModule({
+  //...
+  imports: [
+    //...,
+    DataTablesModule
+  ],
+  //...
+})
+export class AppModule { }
+```
+
 ### Setup OIDC
 
-#### Install the needed NPM dependency
+#### Install the needed NPM dependencies
 
 ```bash
 cd mock-app-front
@@ -208,3 +255,4 @@ ng test
 * [angular-font-awesome](https://github.com/baruchvlz/angular-font-awesome)
 * [How to Add Bootstrap to an Angular CLI project](https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/)
 * [Angular Internationalization (i18n)](https://angular.io/guide/i18n)
+* [Angular DataTables](https://l-lin.github.io/angular-datatables/)
