@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule }    from '@angular/common/http';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
@@ -47,6 +48,7 @@ import { FilesComponent } from './files/files.component';
   imports: [
     BrowserModule,
     BsDropdownModule.forRoot(),
+    CollapseModule.forRoot(),
     AngularFontAwesomeModule,
     HttpClientModule,
     OAuthModule.forRoot(),
