@@ -21,7 +21,10 @@ export class PatientsComponent implements OnInit {
         title: 'Last name'
       },
       birthDate: {
-        title: 'Birthdate'
+        title: 'Birthdate',
+        valuePrepareFunction: function(b) {
+          return b.substring(0,10);
+        }
       },
       avsNumber: {
         title: 'AVS Number'

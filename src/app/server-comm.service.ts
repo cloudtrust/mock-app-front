@@ -21,10 +21,6 @@ export class ServerCommService {
 
   getDepartments() : Observable<Object[]> {
     return this.http.get<Object[]>(this.backend + '/departments')
-      .map(response => {
-        response.map(e => e["hospital"] = e["hospital"]["id"]);
-        return response;
-      })
 		  .pipe(
         catchError(this.handleError('getDepartments', []))
       );
@@ -32,10 +28,6 @@ export class ServerCommService {
 
   getDoctors() : Observable<Object[]> {
     return this.http.get<Object[]>(this.backend + '/doctors')
-      .map(response => {
-        response.map(e => e["departments"] = e["departments"][0]["id"]);
-        return response;
-      })
 		  .pipe(
         catchError(this.handleError('getDoctors', []))
       );
@@ -43,10 +35,6 @@ export class ServerCommService {
 
   getPatients() : Observable<Object[]> {
     return this.http.get<Object[]>(this.backend + '/patients')
-      .map(response => {
-        response.map(e => e["birthDate"] = e["birthDate"].substring(0,10));
-        return response;
-      })
 		  .pipe(
         catchError(this.handleError('getPatients', []))
       );

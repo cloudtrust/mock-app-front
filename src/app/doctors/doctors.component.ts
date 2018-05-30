@@ -21,7 +21,10 @@ export class DoctorsComponent implements OnInit {
         title: 'Last name'
       },
       departments: {
-        title: 'Department ID'
+        title: 'Department ID',
+        valuePrepareFunction: function(d) {
+          return d[0]["id"];
+        }
       }
     }
   };
