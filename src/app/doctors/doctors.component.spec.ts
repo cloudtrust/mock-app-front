@@ -1,4 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ServerCommService } from '../server-comm.service';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { DoctorsComponent } from './doctors.component';
 
@@ -8,7 +11,10 @@ describe('DoctorsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DoctorsComponent ]
+      imports: [ HttpClientTestingModule ],
+      declarations: [ DoctorsComponent ],
+	    schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+      providers: [ ServerCommService ]
     })
     .compileComponents();
   }));

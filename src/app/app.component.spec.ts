@@ -6,7 +6,7 @@ import { RxjsPocComponent } from './rxjs-poc/rxjs-poc.component';
 import { I18nPocComponent } from './i18n-poc/i18n-poc.component';
 import { SsePocComponent } from './sse-poc/sse-poc.component';
 import { LoginPocComponent } from './login-poc/login-poc.component';
-import { ServerCommPocService } from './server-comm-poc.service';
+import { ServerCommService } from './server-comm.service';
 
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
@@ -30,7 +30,7 @@ describe('AppComponent', () => {
         LoginPocComponent
       ],
       providers: [ 
-        ServerCommPocService,
+        ServerCommService,
         OAuthService,
         UrlHelperService
       ],

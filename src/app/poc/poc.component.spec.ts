@@ -10,7 +10,7 @@ import { BootstrapPocComponent } from '../bootstrap-poc/bootstrap-poc.component'
 import { FaPocComponent } from '../fa-poc/fa-poc.component';
 import { I18nPocComponent } from '../i18n-poc/i18n-poc.component';
 
-import { ServerCommPocService } from '../server-comm-poc.service';
+import { ServerCommService } from '../server-comm.service';
 import { OAuthService, UrlHelperService } from 'angular-oauth2-oidc';
 
 describe('PocComponent', () => {
@@ -36,7 +36,7 @@ describe('PocComponent', () => {
       providers: [
         OAuthService,
         UrlHelperService,
-        ServerCommPocService
+        ServerCommService
       ]
     })
     .compileComponents();

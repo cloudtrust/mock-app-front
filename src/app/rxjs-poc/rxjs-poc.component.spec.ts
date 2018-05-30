@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { RxjsPocComponent } from './rxjs-poc.component';
-import { ServerCommPocService } from '../server-comm-poc.service';
+import { ServerCommService } from '../server-comm.service';
 
 describe('RxjsPocComponent', () => {
   let component: RxjsPocComponent;
@@ -12,7 +12,7 @@ describe('RxjsPocComponent', () => {
     TestBed.configureTestingModule({
       imports: [ HttpClientTestingModule ],
       declarations: [ RxjsPocComponent ],
-      providers: [ ServerCommPocService ]
+      providers: [ ServerCommService ]
     })
     .compileComponents();
   }));
