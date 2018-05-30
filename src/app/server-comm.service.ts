@@ -5,8 +5,6 @@ import { Observable } from 'rxjs/Observable';
 import { catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 
-import { Hospital, Department, Doctor, Patient } from './model';
-
 @Injectable()
 export class ServerCommService {
 
@@ -14,36 +12,48 @@ export class ServerCommService {
 
   constructor(private http: HttpClient) { }
 
-  getHospitals() : Observable<Hospital[]> {
-    return this.http.get<Hospital[]>(this.backend + '/hospitals')
+  getHospitals() : Observable<Object[]> {
+    return this.http.get<Object[]>(this.backend + '/hospitals')
 		  .pipe(
         catchError(this.handleError('getHospitals', []))
       );
   }
 
-  getDepartments() : Observable<Hospital[]> {
-    return this.http.get<Hospital[]>(this.backend + '/departments')
+  getDepartments() : Observable<Object[]> {
+    return this.http.get<Object[]>(this.backend + '/departments')
+      .map(response => {
+        response.map(e => e["hospital"] = e["hospital"]["id"]);
+        return response;
+      })
 		  .pipe(
         catchError(this.handleError('getDepartments', []))
       );
   }
 
-  getDoctors() : Observable<Hospital[]> {
-    return this.http.get<Hospital[]>(this.backend + '/doctors')
+  getDoctors() : Observable<Object[]> {
+    return this.http.get<Object[]>(this.backend + '/doctors')
+      .map(response => {
+        response.map(e => e["departments"] = e["departments"][0]["id"]);
+        return response;
+      })
 		  .pipe(
         catchError(this.handleError('getDoctors', []))
       );
   }
 
-  getPatients() : Observable<Hospital[]> {
-    return this.http.get<Hospital[]>(this.backend + '/patients')
+  getPatients() : Observable<Object[]> {
+    return this.http.get<Object[]>(this.backend + '/patients')
+      .map(response => {
+        response.map(e => e["birthDate"] = e["birthDate"].substring(0,10));
+        return response;
+      })
 		  .pipe(
         catchError(this.handleError('getPatients', []))
       );
   }
 
-  getMedicalFiles() : Observable<Hospital[]> {
-    return this.http.get<Hospital[]>(this.backend + '/files')
+  getMedicalFiles() : Observable<Object[]> {
+    return this.http.get<Object[]>(this.backend + '/files')
 		  .pipe(
         catchError(this.handleError('getMedicalFiles', []))
       );
