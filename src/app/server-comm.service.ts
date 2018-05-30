@@ -8,7 +8,7 @@ import { of } from 'rxjs/observable/of';
 import { Hospital, Department, Doctor, Patient } from './model';
 
 @Injectable()
-export class ServerCommPocService {
+export class ServerCommService {
 
   constructor(private http: HttpClient) { }
 

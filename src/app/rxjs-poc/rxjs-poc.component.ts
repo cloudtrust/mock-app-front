@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs/observable/of';
 
-import { ServerCommPocService } from '../server-comm-poc.service';
+import { ServerCommService } from '../server-comm.service';
 
 @Component({
   selector: 'app-rxjs-poc',
@@ -12,7 +12,7 @@ export class RxjsPocComponent implements OnInit {
 
   exampleString = 'Click on me!';
 
-  constructor(private hospitalService : ServerCommPocService) {
+  constructor(private hospitalService : ServerCommService) {
   }
 
   ngOnInit() {

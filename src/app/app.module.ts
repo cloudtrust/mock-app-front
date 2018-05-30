@@ -4,6 +4,8 @@ import { HttpClientModule }    from '@angular/common/http';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { OAuthModule } from 'angular-oauth2-oidc';
@@ -13,7 +15,7 @@ import { BootstrapPocComponent } from './bootstrap-poc/bootstrap-poc.component';
 import { FaPocComponent } from './fa-poc/fa-poc.component';
 import { RxjsPocComponent } from './rxjs-poc/rxjs-poc.component';
 import { I18nPocComponent } from './i18n-poc/i18n-poc.component';
-import { ServerCommPocService } from './server-comm-poc.service';
+import { ServerCommService } from './server-comm.service';
 import { SsePocComponent } from './sse-poc/sse-poc.component';
 import { LoginPocComponent } from './login-poc/login-poc.component';
 import { MenuComponent } from './menu/menu.component';
@@ -24,7 +26,6 @@ import { DepartmentsComponent } from './departments/departments.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { PatientsComponent } from './patients/patients.component';
 import { FilesComponent } from './files/files.component';
-
 
 @NgModule({
   declarations: [
@@ -49,10 +50,11 @@ import { FilesComponent } from './files/files.component';
     AngularFontAwesomeModule,
     HttpClientModule,
     OAuthModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2SmartTableModule
   ],
   providers: [
-    ServerCommPocService
+    ServerCommService
   ],
   bootstrap: [
     AppComponent

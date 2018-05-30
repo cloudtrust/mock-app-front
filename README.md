@@ -62,6 +62,15 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 export class AppModule { }
 ```
 
+### Setup Smart Table
+
+#### Install the needed NPM dependencies
+
+```bash
+cd mock-app-front
+npm install ng2-smart-table --save
+```
+
 ### Setup Font Awesome
 
 #### Install the needed NPM dependency
@@ -69,6 +78,24 @@ export class AppModule { }
 ```bash
 cd mock-app-front
 npm install font-awesome angular-font-awesome --save
+```
+
+#### Import module
+
+Open ./src/app/app.module.ts and add the following :
+
+```angular
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+//...
+@NgModule({
+  //...
+  imports: [
+    //...,
+    Ng2SmartTableModule,
+  ],
+  //...
+})
+export class AppModule { }
 ```
 
 #### Import CSS
@@ -205,6 +232,7 @@ ng test
 ## Bibliography
 
 * [ngx-bootstrap](https://valor-software.com/ngx-bootstrap/#/)
+* [ng2-smart-table](https://akveo.github.io/ng2-smart-table/)
 * [angular-font-awesome](https://github.com/baruchvlz/angular-font-awesome)
 * [How to Add Bootstrap to an Angular CLI project](https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/)
 * [Angular Internationalization (i18n)](https://angular.io/guide/i18n)

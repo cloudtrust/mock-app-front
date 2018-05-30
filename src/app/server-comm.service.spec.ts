@@ -1,17 +1,17 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { ServerCommPocService } from './server-comm-poc.service';
+import { ServerCommService } from './server-comm.service';
 
-describe('ServerCommPocService', () => {
+describe('ServerCommService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [ServerCommPocService]
+      providers: [ServerCommService]
     });
   });
 
-  it('should be created', inject([ServerCommPocService], (service: ServerCommPocService) => {
+  it('should be created', inject([ServerCommService], (service: ServerCommService) => {
     expect(service).toBeTruthy();
   }));
 });
