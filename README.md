@@ -231,7 +231,7 @@ ng test
 
 ## Bibliography
 
-* [ngx-bootstrap](https://valor-software.com/ngx-bootstrap/#/)
+* [ngx-bootstrap](https://valor-software.com/ngx-bootstrap/)
 * [ng2-smart-table](https://akveo.github.io/ng2-smart-table/)
 * [angular-font-awesome](https://github.com/baruchvlz/angular-font-awesome)
 * [How to Add Bootstrap to an Angular CLI project](https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/)
