@@ -25,11 +25,11 @@ export class HospitalsComponent implements OnInit {
 
   data = [];
 
-  constructor(private serverCommService : ServerCommService) {
+  constructor(private backend : ServerCommService) {
   }
 
   ngOnInit() {
-    this.serverCommService.getHospitals().subscribe(hospitals => this.data = hospitals);
+    this.backend.getHospitals().subscribe(h => this.data = h);
   }
 
 }

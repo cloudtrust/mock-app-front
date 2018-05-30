@@ -10,17 +10,42 @@ import { Hospital, Department, Doctor, Patient } from './model';
 @Injectable()
 export class ServerCommService {
 
+  backend = 'http://localhost:8000';
+
   constructor(private http: HttpClient) { }
 
   getHospitals() : Observable<Hospital[]> {
-    return this.http.get<Hospital[]>('http://localhost:8000/hospitals')
+    return this.http.get<Hospital[]>(this.backend + '/hospitals')
 		  .pipe(
-        catchError(this.handleError('getHospitals', [])),
-        tap(hospitals => {
-            console.info(`fetched ${hospitals.length} hospital(s):`)
-            hospitals.forEach(h => console.info(h))
-          }
-        )
+        catchError(this.handleError('getHospitals', []))
+      );
+  }
+
+  getDepartments() : Observable<Hospital[]> {
+    return this.http.get<Hospital[]>(this.backend + '/departments')
+		  .pipe(
+        catchError(this.handleError('getDepartments', []))
+      );
+  }
+
+  getDoctors() : Observable<Hospital[]> {
+    return this.http.get<Hospital[]>(this.backend + '/doctors')
+		  .pipe(
+        catchError(this.handleError('getDoctors', []))
+      );
+  }
+
+  getPatients() : Observable<Hospital[]> {
+    return this.http.get<Hospital[]>(this.backend + '/patients')
+		  .pipe(
+        catchError(this.handleError('getPatients', []))
+      );
+  }
+
+  getMedicalFiles() : Observable<Hospital[]> {
+    return this.http.get<Hospital[]>(this.backend + '/files')
+		  .pipe(
+        catchError(this.handleError('getMedicalFiles', []))
       );
   }
 
