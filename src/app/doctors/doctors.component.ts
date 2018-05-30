@@ -26,6 +26,9 @@ export class DoctorsComponent implements OnInit {
           return d[0]["id"];
         }
       }
+    },
+    attr: {
+      class: 'table table-bordered table-striped table-hover table-sm'
     }
   };
 

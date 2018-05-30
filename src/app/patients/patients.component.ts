@@ -29,6 +29,9 @@ export class PatientsComponent implements OnInit {
       avsNumber: {
         title: 'AVS Number'
       }
+    },
+    attr: {
+      class: 'table table-bordered table-striped table-hover table-sm'
     }
   };
 

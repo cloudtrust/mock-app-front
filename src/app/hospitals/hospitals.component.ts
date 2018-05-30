@@ -20,6 +20,9 @@ export class HospitalsComponent implements OnInit {
       city: {
         title: 'City'
       }
+    },
+    attr: {
+      class: 'table table-bordered table-striped table-hover table-sm'
     }
   };
 

@@ -23,6 +23,9 @@ export class FilesComponent implements OnInit {
       data: {
         title: 'Data'
       }
+    },
+    attr: {
+      class: 'table table-bordered table-striped table-hover table-sm'
     }
   };
 

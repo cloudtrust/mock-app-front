@@ -23,6 +23,9 @@ export class DepartmentsComponent implements OnInit {
           return d["id"];
         }
       }
+    },
+    attr: {
+      class: 'table table-bordered table-striped table-hover table-sm'
     }
   };
 
